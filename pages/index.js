@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import Card from "./component/card";
+import Card from "./component/catcard";
 import { useState } from "react";
 
 export default function Home({ data }) {
