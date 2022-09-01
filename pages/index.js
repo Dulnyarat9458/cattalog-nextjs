@@ -1,4 +1,3 @@
-
 import Catcard from "./component/catcard";
 import { useState } from "react";
 
@@ -11,7 +10,7 @@ export default function Home({ data }) {
 
   const filterBySearch = (event) => {
     const searchInput = event.target.value;
-    console.log(searchInput)
+    console.log(searchInput);
     var updatedList = [...data];
     updatedList = updatedList.filter((item) => {
       return item.name.toLowerCase().indexOf(searchInput.toLowerCase()) !== -1;
@@ -44,10 +43,11 @@ export default function Home({ data }) {
 
 export async function getServerSideProps() {
   const res = await fetch(`https://api.thecatapi.com/v1/breeds`, {
-    'headers': {
-        'x-api-key': 'live_jEGQJ7EX0TPQwwl6IgODgbTgkNkDTge8Kak0wC2d14ij8Y9Ndt3LEZwofhFQgBy9',
-    }
-});
+    headers: {
+      "Content-Type": "application/json",
+      "x-api-key": "live_jEGQJ7EX0TPQwwl6IgODgbTgkNkDTge8Kak0wC2d14ij8Y9Ndt3LEZwofhFQgBy9'",
+    },
+  });
   const data = await res.json();
   return { props: { data } };
 }
