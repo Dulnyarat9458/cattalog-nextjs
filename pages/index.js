@@ -43,7 +43,11 @@ export default function Home({ data }) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch(`https://api.thecatapi.com/v1/breeds`);
+  const res = await fetch(`https://api.thecatapi.com/v1/breeds`, {
+    'headers': {
+        'x-api-key': 'live_jEGQJ7EX0TPQwwl6IgODgbTgkNkDTge8Kak0wC2d14ij8Y9Ndt3LEZwofhFQgBy9',
+    }
+});
   const data = await res.json();
   return { props: { data } };
 }
