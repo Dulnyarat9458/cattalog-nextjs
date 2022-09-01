@@ -21,7 +21,12 @@ export default function Cat({ cat }) {
 // This function gets called at build time
 export async function getStaticPaths() {
   // Call an external API endpoint to get posts
-  const res = await fetch("https://api.thecatapi.com/v1/breeds");
+  const res = await fetch("https://api.thecatapi.com/v1/breeds",{
+    headers: {
+      "Content-Type": "application/json",
+      "x-api-key": "live_jEGQJ7EX0TPQwwl6IgODgbTgkNkDTge8Kak0wC2d14ij8Y9Ndt3LEZwofhFQgBy9'",
+    },
+  });
   const cats = await res.json();
 
   // Get the paths we want to pre-render based on posts
@@ -38,7 +43,12 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   // params contains the post `id`.
   // If the route is like /posts/1, then params.id is 1
-  const res = await fetch(`https://api.thecatapi.com/v1/breeds/${params.id}`);
+  const res = await fetch(`https://api.thecatapi.com/v1/breeds/${params.id}`, {
+    headers: {
+      "Content-Type": "application/json",
+      "x-api-key": "live_jEGQJ7EX0TPQwwl6IgODgbTgkNkDTge8Kak0wC2d14ij8Y9Ndt3LEZwofhFQgBy9'",
+    },
+  });
   const cat = await res.json();
   // console.log(cat.id)
   // Pass post data to the page via props
