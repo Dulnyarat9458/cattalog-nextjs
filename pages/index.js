@@ -1,13 +1,12 @@
-import Head from "next/head";
-import styles from "../styles/Home.module.css";
-import Card from "./component/catcard";
+
+import Catcard from "./component/catcard";
 import { useState } from "react";
 
 export default function Home({ data }) {
   const [filteredList, setFilteredList] = new useState(data);
 
   var contentElements = filteredList.map((value, index) => {
-    return <Card key={index} contentData={value} />;
+    return <Catcard key={index} contentData={value} />;
   });
 
   const filterBySearch = (event) => {
