@@ -46,6 +46,15 @@ a {
   }
   body {
     color: #747194;
-    background: #E49A98;
+    background: #e49a98;
   }
+}
+
+.the-cat-img {
+  width: auto !important;
+  height: 100% !important;
+  max-width: unset !important;
+  min-width: unset !important;
+  max-height: unset !important;
+  min-height: unset !important;
 }

@@ -5,7 +5,6 @@ export default function Cat({ cat }) {
   return (
     <div className="container mx-auto h-screen flex justify-center items-center">
       <div className="p-8 bg-white text-sm rounded-lg drop-shadow-xl">
-        <img src={cat.image?.url}></img>
         <p>Bleed: {cat.name}</p>
         <p>Origin: {cat.origin}</p>
         <p>Temperament: {cat.temperament}</p>
