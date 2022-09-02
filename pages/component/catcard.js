@@ -4,11 +4,11 @@ import Image from "next/image";
 export default function catcard(props) {
   const { contentData } = props;
   var imgUrl;
-  var linker = "../cat/" + props.id;
-  if (contentData?.image?.url == null) {
+  var linker = "../cat/" + contentData.id;
+  if (contentData.image?.url == null) {
     imgUrl = "/notav.jpg";
   } else {
-    imgUrl = contentData?.image?.url;
+    imgUrl = contentData.image?.url;
   }
   return (
     <Link href={linker}>
