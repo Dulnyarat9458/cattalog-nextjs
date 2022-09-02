@@ -34,6 +34,8 @@ export async function getStaticPaths() {
     params: { id: cat.id },
   }));
 
+  console.log("static path done")
+
   // We'll pre-render only these paths at build time.
   // { fallback: false } means other routes should 404.
   return { paths, fallback: false };
